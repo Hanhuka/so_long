@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:39:27 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/05/05 14:56:49 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/05/26 18:13:35 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,18 @@ typedef struct s_imgs
 	void	*sus_16;
 	void	*sus_16_left;
 	void	*background;
+	void	*background_1;
+	void	*background_2;
+	void	*background_3;
+	void	*background_4;
+	void	*background_5;
+	void	*background_6;
+	void	*background_7;
+	void	*background_8;
+	void	*background_9;
+	void	*background_10;
+	void	*background_11;
+	void	*background_12;
 	void	*side_info;
 	void	*exit;
 	void	*exit_48;
@@ -170,6 +182,7 @@ typedef struct s_win {
 	int		px_size;
 	int		width;
 	int		height;
+	int		opt;
 }				t_win;
 
 //map_checker.c
@@ -281,6 +294,18 @@ void	init_walls5(t_win *win, int *s);
 void	init_exits(t_win *win, int s);
 void	init_sprites(t_win *win, int ac, char **av);
 void	init_sprites2(t_win *win, int s);
+
+//preparations3.c
+t_anim	**bckgnd(void);
+void	opt_2(t_win *win, int s);
+void	init_opt3(t_win *win, int s);
+void	opt_3(t_win *win, int s);
+void	change_bckgnd(int keycode);
+
+//nyan.c
+int		nyan(t_win *win);
+void	print_backgroud(t_win *win);
+void	cenas(t_win *win, int ac, char **av);
 
 //side_info.c
 void	printf_side_info(t_win *win);
