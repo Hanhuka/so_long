@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 11:49:43 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/05/05 14:54:22 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/05/26 16:39:55 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int	key_down(int keycode, t_win *win)
 	if (keycode == 2)
 		keys()->d = 1;
 	zoom(keycode, win);
+	change_bckgnd(keycode);
 	move_character(keys()->d - keys()->a, keys()->s - keys()->w);
 	mlx_clear_window((*win).mlx, (*win).mlx_win);
 	print_to_window(win);

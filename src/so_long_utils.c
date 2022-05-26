@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:03:42 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/05/05 14:54:22 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/05/26 18:08:14 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,8 @@ void	print_enemies(t_win *win, t_objt *tmp)
 void	print_to_window(t_win *win)
 {
 	t_objt	*tmp;
-	int		x;
-	int		y;
 
-	x = (-(*objects((*win).px_size))->x + (*init_p()).x) / 8 - 50;
-	y = (-(*objects((*win).px_size))->y + (*init_p()).y) / 8 - 50;
-	if ((*sp()).background)
-		mlx_put_image_to_window((*window()).mlx, (*window()).mlx_win,
-			(*sp()).background, x, y);
+	print_backgroud(win);
 	tmp = (*objects((*win).px_size))->next;
 	while (tmp && tmp->type <= 'z' && tmp->type >= 'a')
 		tmp = tmp->next;

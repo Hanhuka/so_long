@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:29:22 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/05/11 11:21:08 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/05/26 17:44:45 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	animations(t_win *win)
 {
 	animation(win);
 	enemys(win);
+	nyan(win);
 	return (0);
 }
 

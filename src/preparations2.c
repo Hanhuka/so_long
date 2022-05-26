@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:38:48 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/05/05 14:54:22 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/05/26 18:14:31 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,19 +80,9 @@ void	init_sprites(t_win *win, int ac, char **av)
 {
 	int	s;
 
-	if (ac == 2)
-		((*sp()).background) = mlx_xpm_file_to_image((*win).mlx,
-				"Fundo_2048_1.xpm", &s, &s);
-	if (ac == 3)
-	{
-		if (ft_strlen(av[2]) == 1 && av[2][0] == '0')
-			;
-		else if (ft_strlen(av[2]) == 1 && av[2][0] == '1')
-			((*sp()).background) = mlx_xpm_file_to_image((*win).mlx,
-					"so_long_bckg.xpm", &s, &s);
-		else
-			errors("\e[1;91mError\nWrong arguments\n\e[0m");
-	}
+	s = 0;
+	(*window()).opt = 0;
+	cenas(win, ac, av);
 	init_sprites2(win, s);
 	init_exits(win, s);
 	init_bees(win, s);
