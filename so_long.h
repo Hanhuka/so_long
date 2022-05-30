@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:39:27 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/05/26 18:13:35 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/05/30 12:44:26 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 
 //# define	malloc(x)(NULL)
 # define ERROR 1
+
+# define spath "sprites/"
 
 typedef struct s_img
 {
