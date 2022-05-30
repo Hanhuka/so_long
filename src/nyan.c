@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:58:29 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/05/30 15:00:14 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/05/30 15:04:18 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,14 @@ void	cenas(t_win *win, int ac, char **av)
 
 	if (ac == 2)
 		((*sp()).background) = mlx_xpm_file_to_image((*win).mlx,
-				spath"Fundo_2048_1.xpm", &s, &s);
+				SPATH"Fundo_2048_1.xpm", &s, &s);
 	if (ac == 3)
 	{
 		if (ft_strlen(av[2]) == 1 && av[2][0] == '0')
 			;
 		else if (ft_strlen(av[2]) == 1 && av[2][0] == '1')
 			((*sp()).background) = mlx_xpm_file_to_image((*win).mlx,
-					spath"so_long_bckg.xpm", &s, &s);
+					SPATH"so_long_bckg.xpm", &s, &s);
 		else if (ft_strlen(av[2]) == 1 && av[2][0] == '2')
 			opt_2(win, s);
 		else if (ft_strlen(av[2]) == 1 && av[2][0] == '3')

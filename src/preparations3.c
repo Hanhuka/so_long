@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 15:19:10 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/05/30 12:47:20 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/05/30 15:04:28 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void	opt_2(t_win *win, int s)
 {
 	(*window()).opt = 1;
 	((*sp()).background_1) = mlx_xpm_file_to_image((*win).mlx,
-			spath"Fundo_2048_1.xpm", &s, &s);
+			SPATH"Fundo_2048_1.xpm", &s, &s);
 	((*sp()).background_2) = mlx_xpm_file_to_image((*win).mlx,
-			spath"so_long_bckg.xpm", &s, &s);
+			SPATH"so_long_bckg.xpm", &s, &s);
 	((*sp()).background_3) = mlx_xpm_file_to_image((*win).mlx,
-			spath"DaMemes.xpm", &s, &s);
+			SPATH"DaMemes.xpm", &s, &s);
 	stackadd_back(bckgnd(), new_module((*sp()).background_1));
 	stackadd_back(bckgnd(), new_module((*sp()).background_2));
 	stackadd_back(bckgnd(), new_module((*sp()).background_3));
@@ -38,29 +38,29 @@ void	opt_2(t_win *win, int s)
 void	init_opt3(t_win *win, int s)
 {
 	((*sp()).background_1) = mlx_xpm_file_to_image((*win).mlx,
-			spath"Nyan1.xpm", &s, &s);
+			SPATH"Nyan1.xpm", &s, &s);
 	((*sp()).background_2) = mlx_xpm_file_to_image((*win).mlx,
-			spath"Nyan2.pm", &s, &s);
+			SPATH"Nyan2.pm", &s, &s);
 	((*sp()).background_3) = mlx_xpm_file_to_image((*win).mlx,
-			spath"Nyan3.xpm", &s, &s);
+			SPATH"Nyan3.xpm", &s, &s);
 	((*sp()).background_4) = mlx_xpm_file_to_image((*win).mlx,
-			spath"Nyan4.xpm", &s, &s);
+			SPATH"Nyan4.xpm", &s, &s);
 	((*sp()).background_5) = mlx_xpm_file_to_image((*win).mlx,
-			spath"Nyan5.xpm", &s, &s);
+			SPATH"Nyan5.xpm", &s, &s);
 	((*sp()).background_6) = mlx_xpm_file_to_image((*win).mlx,
-			spath"Nyan6.xpm", &s, &s);
+			SPATH"Nyan6.xpm", &s, &s);
 	((*sp()).background_7) = mlx_xpm_file_to_image((*win).mlx,
-			spath"Nyan7.xpm", &s, &s);
+			SPATH"Nyan7.xpm", &s, &s);
 	((*sp()).background_8) = mlx_xpm_file_to_image((*win).mlx,
-			spath"Nyan8.xpm", &s, &s);
+			SPATH"Nyan8.xpm", &s, &s);
 	((*sp()).background_9) = mlx_xpm_file_to_image((*win).mlx,
-			spath"Nyan9.xpm", &s, &s);
+			SPATH"Nyan9.xpm", &s, &s);
 	((*sp()).background_10) = mlx_xpm_file_to_image((*win).mlx,
-			spath"Nyan10.xpm", &s, &s);
+			SPATH"Nyan10.xpm", &s, &s);
 	((*sp()).background_11) = mlx_xpm_file_to_image((*win).mlx,
-			spath"Nyan11.xpm", &s, &s);
+			SPATH"Nyan11.xpm", &s, &s);
 	((*sp()).background_12) = mlx_xpm_file_to_image((*win).mlx,
-			spath"Nyan12.xpm", &s, &s);
+			SPATH"Nyan12.xpm", &s, &s);
 }
 
 void	opt_3(t_win *win, int s)
