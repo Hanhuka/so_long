@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 15:19:10 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/05/30 15:04:28 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/09/07 16:09:45 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	opt_2(t_win *win, int s)
 	((*sp()).background_2) = mlx_xpm_file_to_image((*win).mlx,
 			SPATH"so_long_bckg.xpm", &s, &s);
 	((*sp()).background_3) = mlx_xpm_file_to_image((*win).mlx,
-			SPATH"DaMemes.xpm", &s, &s);
+			SPATH"Nyan1.xpm", &s, &s);
 	stackadd_back(bckgnd(), new_module((*sp()).background_1));
 	stackadd_back(bckgnd(), new_module((*sp()).background_2));
 	stackadd_back(bckgnd(), new_module((*sp()).background_3));
@@ -90,7 +90,7 @@ void	opt_3(t_win *win, int s)
 
 void	change_bckgnd(int keycode)
 {
-	if ((keycode == 123 || keycode == 124) && (*window()).opt == 1)
+	if ((keycode == LEFT || keycode == RIGHT) && (*window()).opt == 1)
 	{
 		(*bckgnd()) = (*bckgnd())->next;
 		(*sp()).background = (*bckgnd())->img;

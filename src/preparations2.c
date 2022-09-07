@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:38:48 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/05/30 15:04:43 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/09/07 16:49:09 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ void	init_collectables(void)
 void	init_walls5(t_win *win, int *s)
 {
 	((*sp())).wall_48 = mlx_xpm_file_to_image((*win).mlx,
-			SPATH"wall_48.xpm", s, s);
+			SPATH"Wall_48.xpm", s, s);
 	((*sp())).wall_32 = mlx_xpm_file_to_image((*win).mlx,
-			SPATH"wall_32.xpm", s, s);
+			SPATH"Wall_32.xpm", s, s);
 	((*sp())).wall_16 = mlx_xpm_file_to_image((*win).mlx,
-			SPATH"wall_16.xpm", s, s);
+			SPATH"Wall_16.xpm", s, s);
 	((*sp()).sus) = mlx_xpm_file_to_image((*win).mlx,
 			SPATH"Sus_64.xpm", s, s);
 	((*sp()).sus_left) = mlx_xpm_file_to_image((*win).mlx,
@@ -92,6 +92,12 @@ void	init_sprites(t_win *win, int ac, char **av)
 	init_walls4(win, &s);
 	init_walls5(win, &s);
 	init_collectables();
+	((*sp()).empty16) = mlx_xpm_file_to_image((*win).mlx,
+			SPATH"empty16.xpm", &s, &s);
+	((*sp()).empty32) = mlx_xpm_file_to_image((*win).mlx,
+			SPATH"empty32.xpm", &s, &s);
+	((*sp()).empty48) = mlx_xpm_file_to_image((*win).mlx,
+			SPATH"empty48.xpm", &s, &s);
 }
 
 void	init_sprites2(t_win *win, int s)

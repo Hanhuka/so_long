@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 11:49:43 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/05/26 16:39:55 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/09/07 16:53:20 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ t_key	*keys(void)
 
 void	zoom(int keycode, t_win *win)
 {
-	if (keycode == 125 || keycode == 126)
+	if (keycode == UP || keycode == DOWN)
 	{
-		if (keycode == 125 && (*win).px_size > 16)
+		if (keycode == UP && (*win).px_size > 16)
 			(*win).px_size -= 16;
-		if (keycode == 126 && (*win).px_size < 64)
+		if (keycode == DOWN && (*win).px_size < 64)
 			(*win).px_size += 16;
 	}
 }
@@ -33,40 +33,41 @@ void	zoom(int keycode, t_win *win)
 int	key_down(int keycode, t_win *win)
 {
 	(void) win;
-	if (keycode == 53)
+	keys()->w = 0;
+	keys()->a = 0;
+	keys()->s = 0;
+	keys()->d = 0;
+	if (keycode == ESC)
 		exit_game("\e[1;94mWindow closed\n\e[0m");
-	if (keycode == 13)
+	if (keycode == KEY_W)
 		keys()->w = 1;
-	if (keycode == 0)
+	if (keycode == KEY_A)
 		keys()->a = 1;
-	if (keycode == 1)
+	if (keycode == KEY_S)
 		keys()->s = 1;
-	if (keycode == 2)
+	if (keycode == KEY_D)
 		keys()->d = 1;
 	zoom(keycode, win);
 	change_bckgnd(keycode);
 	move_character(keys()->d - keys()->a, keys()->s - keys()->w);
 	mlx_clear_window((*win).mlx, (*win).mlx_win);
 	print_to_window(win);
-	mlx_hook((*win).mlx_win, 2, 1, key_down, win);
-	mlx_hook((*win).mlx_win, 3, 1, key_up, win);
 	return (0);
 }
 
 int	key_up(int keycode, t_win *win)
 {
-	if (keycode == 13)
+	printf("key up\n");
+	if (keycode == KEY_W)
 		keys()->w = 0;
-	if (keycode == 0)
+	if (keycode == KEY_A)
 		keys()->a = 0;
-	if (keycode == 1)
+	if (keycode == KEY_S)
 		keys()->s = 0;
-	if (keycode == 2)
+	if (keycode == KEY_D)
 		keys()->d = 0;
 	move_character(keys()->d - keys()->a, keys()->s - keys()->w);
 	mlx_clear_window((*win).mlx, (*win).mlx_win);
 	print_to_window(win);
-	mlx_hook((*win).mlx_win, 2, 1, key_down, win);
-	mlx_hook((*win).mlx_win, 3, 1, key_up, win);
 	return (0);
 }

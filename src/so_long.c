@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:29:22 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/05/26 17:44:45 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/09/07 16:52:40 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	animations(t_win *win)
 
 int	animation(t_win *win)
 {
-	static int	i;
+	static long int	i;
 
 	if (i < 5000)
 	{
@@ -57,7 +57,7 @@ int	main(int ac, char **av)
 		return (1);
 	check_file(av[1]);
 	checker(av[1], map());
-	(*window()).size = 20;
+	(*window()).size = 15;
 	(*window()).px_size = 64;
 	(*window()).mlx = mlx_init();
 	(*window()).width = (*window()).px_size * (*window()).size;

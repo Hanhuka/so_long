@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 15:31:46 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/05/05 14:54:22 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/09/07 17:25:30 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,5 +122,11 @@ void	exit_game(char *str)
 	destroy_walls();
 	destroy_walls2();
 	destroy_sprites();
+	destroy_sprites2();
+	mlx_clear_window((*window()).mlx, (*window()).mlx_win);
+	mlx_destroy_window((*window()).mlx, (*window()).mlx_win);
+	mlx_destroy_display((*window()).mlx);
+	free_map(map());
+	free((*window()).mlx);
 	exit(0);
 }

@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 11:42:01 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/05/30 15:05:09 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/09/07 16:58:14 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ void	init_bees(t_win	*win, int s)
 			SPATH"Bee_64_left.xpm", &s, &s);
 	((*sp()).bee_right) = mlx_xpm_file_to_image((*win).mlx,
 			SPATH"Bee_64_right.xpm", &s, &s);
-		((*sp()).bee_left_48) = mlx_xpm_file_to_image((*win).mlx,
+	((*sp()).bee_left_48) = mlx_xpm_file_to_image((*win).mlx,
 			SPATH"Bee_left_48.xpm", &s, &s);
 	((*sp()).bee_right_48) = mlx_xpm_file_to_image((*win).mlx,
 			SPATH"Bee_right_48.xpm", &s, &s);

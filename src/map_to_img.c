@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:37:10 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/05/05 14:54:22 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/09/07 16:57:29 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_strlen2(char *str)
 
 	i = 0;
 	while (str[i])
-	i++;
+		i++;
 	return (i);
 }
 
@@ -33,7 +33,7 @@ void	create_by_size(void)
 		create_objects(i);
 		if ((*x_type()) < 9)
 			(*x_type()) += 1;
-			i += 16;
+		i += 16;
 	}
 }
 

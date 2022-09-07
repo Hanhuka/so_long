@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:38:56 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/05/05 14:54:22 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/09/07 16:51:44 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,11 @@ void	remove_colectables_size(int i)
 		i--;
 	}
 	tmp16->type = '0';
-	tmp16->img = (*sp()).wall5;
+	tmp16->img = (*sp()).empty16;
 	tmp32->type = '0';
-	tmp32->img = (*sp()).wall5;
+	tmp32->img = (*sp()).empty32;
 	tmp48->type = '0';
-	tmp48->img = (*sp()).wall5;
+	tmp48->img = (*sp()).empty48;
 }
 
 void	open_exits(void)
