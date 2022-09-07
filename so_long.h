@@ -6,15 +6,38 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:39:27 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/05/30 15:03:23 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/09/07 17:20:51 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+# ifndef LINUX
+#  define UP 65362
+#  define DOWN 65364
+#  define KEY_W 119
+#  define KEY_A 97
+#  define KEY_S 115
+#  define KEY_D 100
+#  define ESC 65307
+#  define LEFT 65361
+#  define RIGHT 65363
+# else
+#  define UP 125
+#  define DOWN 126
+#  define KEY_W 13
+#  define KEY_A 0
+#  define KEY_S 1
+#  define KEY_D 2
+#  define ESC 53
+#  define LEFT 123
+#  define RIGHT 124
+# endif
+
 # include "get_next_line.h"
-# include <mlx.h>
+// # include <mlx.h>
+# include "mlx_linux/mlx.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -139,6 +162,9 @@ typedef struct s_imgs
 	void	*collectable_16;
 	void	*collectable_32;
 	void	*collectable_48;
+	void	*empty48;
+	void	*empty32;
+	void	*empty16;
 }				t_imgs;
 
 typedef struct s_key

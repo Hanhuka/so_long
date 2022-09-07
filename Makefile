@@ -6,16 +6,19 @@
 #    By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/26 16:26:20 by ralves-g          #+#    #+#              #
-#    Updated: 2022/05/26 17:23:19 by ralves-g         ###   ########.fr        #
+#    Updated: 2022/09/07 17:48:06 by ralves-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror 
+#-fsanitize=leak
 MLXFLAGS	=	-lmlx -framework OpenGL -framework AppKit
+MLX_LINUX	=	-Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -D LINUX
 RM			=	rm -f
 
 NAME		=	so_long
+NAME2		=	so_long_linux
 
 INCLUDE		=	-I ./
 SRCS_		=	\
@@ -56,14 +59,20 @@ _OBJ		=	./obj/
 _SRC		= 	./src/
 OBJS		=	$(patsubst $(_SRC)%.c, $(_OBJ)%.o, $(SRCS))
 
-all:		$(NAME)
 
-$(_OBJ)%.o: $(_SRC)%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+all:		$(NAME)
 	
+$(_OBJ)%.o: $(_SRC)%.c
+	$(CC) -c $< -o $@
+
 $(NAME): $(_OBJ) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(MLXFLAGS) -o $(NAME) $(INCLUDE)
 
+linux:		$(NAME2)
+
+$(NAME2): $(_OBJ) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) $(MLX_LINUX) -o $(NAME2) $(INCLUDE)
+	
 #bonus:		$(SRCS_B) $(OBJS_B)
 #			$(CC) $(CFLAGS) $(SRCS_B) -o $(NAME_B)
 #			$(CC) $(CFLAGS) $(SRCS_B) -c
@@ -75,6 +84,6 @@ clean:
 	$(RM) -r $(_OBJ)
 
 fclean:	clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(NAME2)
 
 re:	fclean all
